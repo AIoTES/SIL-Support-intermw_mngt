@@ -10,7 +10,7 @@ To use the provided script, the intermw service must be running in Docker. The p
 
 The provided script can be built into a Docker image, which is used with the SIL stack. To run the Docker image, use:
 
-`sudo docker run -v /var/run/docker.sock:/var/run/docker.sock -e INTERMW_CALLBACK_PROTOCOL=http -e INTERMW_CALLBACK_IP=<IP> -e INTERMW_CALLBACK_PORT=<PORT> docker-activage.satrd.es/intermw-mngt:<version>`
+`sudo docker run -v /var/run/docker.sock:/var/run/docker.sock -e INTERMW_CALLBACK_PROTOCOL=http -e INTERMW_CALLBACK_IP=<IP> -e INTERMW_CALLBACK_PORT=<PORT> aiotesdocker/sil-support-intermw_mngt:<version>`
 
 
 After running the script, the intermw service must be restarted to apply the changes.
@@ -21,7 +21,7 @@ After running the script, the intermw service must be restarted to apply the cha
 You can build a docker image using:
 
 ```
-sudo docker build -t intermw-mngt:<version> .
+sudo docker build -t sil-support-intermw_mngt:<version> .
 ```
 
 
@@ -30,12 +30,7 @@ sudo docker build -t intermw-mngt:<version> .
 [Deployment of AIoTES components using Portainer](https://github.com/activage/AIOTES-2.0/wiki/Deployment#aiotes-components-deployment).
 
 
-**Available Docker image versions** 
-
-Docker images:
-+ v0.0.1: $INTERMW_CALLBACK_PROTOCOL://$INTERMW_CALLBACK_IP:$INTERMW_CALLBACK_PORT (AIoTES 1.5, SIL standalone deployment)
-+ v0.0.2: $INTERMW_CALLBACK_PROTOCOL://$INTERMW_CALLBACK_ADDRESS
-+ v0.0.3: Configures the callback according to the AIOTES API definition (to be used with AIoTES 2.0 deployment): {API_base_URL}/sil/callback. The address is created as $INTERMW_CALLBACK_PROTOCOL://$INTERMW_CALLBACK_IP:$INTERMW_CALLBACK_PORT/sil/callback
+[Available Docker images](https://hub.docker.com/r/aiotesdocker/sil-support-intermw_mngt)
 
 
 
